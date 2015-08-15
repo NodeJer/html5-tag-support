@@ -5,3 +5,5 @@
 ##[@html5 details tag demo](http://nodejer.github.io/html5-tag-support/details/)
 ##[@html5 AlertDialog demo](http://nodejer.github.io/html5-tag-support/dialog/alertDialog/)
 ##[@html5 rewrite system dialog demo](http://nodejer.github.io/html5-tag-support/dialog/rewriteSystemDialog/)
+
+#You can view the page source code to understand how I do it
