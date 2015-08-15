@@ -1,5 +1,8 @@
-# html-tag-support
-使用javascript支持html5 dialog 和 details 未来会持续更新 并且重写了系统的alert and confrim function
+# 使用javascript支持html5 dialog 和 details 未来会持续更新 并且重写了系统的alert and confrim function
+
+#support ie8+
+
+#my email 1245089789@qq.com
 
 ##[@html5 dialog tag demo](http://nodejer.github.io/html5-tag-support/)
 ##[@html5 details tag demo](http://nodejer.github.io/html5-tag-support/details/)
