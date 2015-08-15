@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="alertDialog-default.css">
+    <style type="text/css">
+        h1, body{padding: 0; margin: 0;}
+        body{
+            background: url(../bg.jpg);
+        }
+
+        input[type="button"]{
+            position: fixed; 
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" onmouseup="create(event)" value="show dialog">
+
+    <div style="height:1500px"></div>
+
+    <script src="../html5 dialog tag/html5-dialog-support2.js"></script>
+    <script src="AlertDialog.js"></script>
+    <script>
+        function create(ev){
+            var dialog = new AlertDialog(document.body);
+
+            var close = function(){
+               alert(this.returnValue);
+            }
+            if(document.addEventListener){
+                dialog.getWindow().addEventListener("close", close);
+            }
+            //ie8 
+            else{
+                dialog.getWindow().onclose = close;
+            }
+
+            dialog.setIcon("../i.png");
+            dialog.setTitle("test");
+            dialog.setView("<h1>hi dialog</h1>");
+
+            dialog.setButton("ok", "click", function(ev){
+                dialog.closeWindow(this.innerHTML);
+            }, "50%");
+            dialog.setButton("cancel", "click", function(ev){
+                dialog.closeWindow(this.innerHTML);
+            }, "50%");
+            dialog.showWindow();
+
+            dialog.toHorizontalCenter();
+            dialog.toVerticalCenter();
+        }
+    </script>
+</body>
+
+</html>

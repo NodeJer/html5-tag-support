@@ -1,0 +1,90 @@
+dialog{
+	padding: 0!important;
+	border: none!important;
+	background: none!important;
+}
+.alertDialog {
+	min-width: 250px;
+	background: #fff;
+	background: rgba(255, 255, 255, 0.95);
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .8);
+	-webkit-animation: testanimations .2s;
+	animation: testanimations .2s;
+	overflow: hidden;
+}
+.alertDialog .titleBar {
+	padding: 10px;
+	color: #709CC7;
+	border-bottom: 1px solid;
+	font-size: 1.1em;
+	overflow: hidden;
+}
+.alertDialog .titleBar .titleIcon {
+	display: inline-block;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+.alertDialog .titleBar .titleText {
+	display: inline-block;
+}
+.alertDialog .content {
+	padding: 12px 15px 20px 15px;
+}
+.alertDialog .actionBar {
+	display: -webkit-box;
+	display: box;
+	display: -webkit-flex;
+	display: flex;
+	border-top: 1px solid;
+	border-top-color: inherit;
+	overflow: hidden;
+}
+.alertDialog .actionBar .button:first-child {
+	border: none;
+}
+.alertDialog .actionBar .button {
+	float: left\0\9;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	-webkit-flex: 1;
+	flex: 1;
+	text-align: center;
+	padding: 10px 0;
+	border-left: 1px solid;
+	border-left-color: #ddd;
+	cursor: pointer;
+	font-weight: normal;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.alertDialog .actionBar .button:active {
+	background:#709CC7;
+	color: #fff;
+}
+
+@-webkit-keyframes testanimations {
+	from {
+		opacity: 0;
+		transform: scale(.5);
+		-webkit-transform: scale(.5);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scale(1)
+		transform: scale(1)		
+	}
+}
+@keyframes testanimations {
+	from {
+		opacity: 0;
+		transform: scale(.5);
+		-webkit-transform: scale(.5);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+		-webkit-transform: scale(1);
+	}
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description"content="">
+<meta name="keywords"content="">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet"href="../alertDialog/alertDialog-default.css">
+<style>
+    body{
+
+        font-family: Arial, "Helvetica Neue", "黑体", Helvetica, sans-serif;
+    }
+</style>
+</head>
+
+<body style="height: 1500px; background: url(../bg.jpg)" >
+    <button onclick="showAlert()">alert</button>
+    <button onclick="showConfirm()">confirm</button>
+
+    <script src="../html5 dialog tag/html5-dialog-support2.js"></script>
+    <script src="../alertDialog/AlertDialog.js"></script>
+    <script src="rewrite-system-dialog.js"></script>
+
+    <script>
+        function showAlert() {
+            alert("hello");
+        }
+        function showConfirm() {
+            confirm("hi","my name is cole from China", function(value) {
+                alert("hi", "resphone is "+value);
+            });
+        }
+    </script>
+</body>
+
+</html>

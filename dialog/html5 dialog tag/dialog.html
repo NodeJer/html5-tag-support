@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <script>
+        //support ie8
+    	document.createElement("dialog");
+    </script>
+</head>
+
+<body>
+	<dialog open="open" id="dialog" style="bottom: 10%;"><h1>dialog</h1></dialog>
+
+    <button id="show" onclick="closeDialog()">close dialog</button>
+    <button id="create" onclick="createDialog()">create dialog</button>
+    <script src="html5-dialog-support2.js"></script>
+    <script>
+    	function closeDialog(){
+    		var dialog = document.getElementById("dialog");
+
+            // dialog.removeAttribute("open")
+            dialog.close();
+    	}	
+        function createDialog(){
+        	var newDialog = document.createElement("dialog");
+
+	        newDialog.innerHTML = "<form method=dialog><input type=submit value=ok /><input type=button value=no /></form>";
+
+	        var close = function(){
+	        	alert(this.returnValue);
+	        }
+	        try{
+	        	newDialog.addEventListener('close', close);
+	        }catch(e){
+                //ie8
+	        	newDialog.onclose = close;
+	        }
+
+            newDialog.show();
+
+	        document.body.appendChild(newDialog);
+        }
+       
+    </script>
+</body>
+
+</html>

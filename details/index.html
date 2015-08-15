@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+body, p{
+	margin: 0; padding: 0;
+}
+ details {
+ 	margin-left:20px;
+}
+</style>
+<script>
+	document.createElement("details");
+	document.createElement("summary");
+    document.createElement("dialog");
+</script>
+</head>
+<body id="body">
+	<dialog open="open" id="dialog" style="bottom: 10%;"><h1>dialog</h1></dialog>
+	<button onclick="createDetails()">create details</button>
+	<button onclick="closeDialog()">close dialog</button>
+	<button onclick="showAll()">showAll</button>
+	<button onclick="closeAll()">closeAll</button>
+	<details>
+		<summary>Copyright 2011.</summary>
+		<details>
+			<summary>Copyright 2012.</summary>
+			<p>2012</p>
+		</details>
+	</details>
+	<details>
+		<summary>Copyright 2011.</summary>
+		<details>
+			<summary>Copyright 2012.</summary>
+			<p>2012</p>
+		</details>
+	</details>
+<script src="html5-details-support.js"></script>
+<script src="html5-dialog-support2.js"></script>
+<script>
+	function closeDialog(){
+		var dialog = document.getElementById("dialog");
+            dialog.close();
+	}
+	function createDetails(){
+
+		var details = document.createElement("details");
+		var summary = document.createElement("summary");
+
+		var details2 = document.createElement("details");
+		var summary2 = document.createElement("summary");
+
+		summary.innerHTML = "new details";
+		summary2.innerHTML = "new details";
+
+
+		details2.appendChild(summary2);
+
+		details.appendChild(summary)
+		details.appendChild(details2)
+
+		document.body.appendChild(details);
+
+		// document.body.innerHTML += "<details><summary>Copyright 2011.</summary><details><summary>Copyright 2012.</summary></details></details>"
+	}
+	function showAll(){
+		var detailsList = document.getElementsByTagName("details");
+
+		for(var i=0; i<detailsList.length; i++){
+			detailsList[i].setAttribute("open", true);
+		}
+	}
+	function closeAll(){
+		var detailsList = document.getElementsByTagName("details");
+
+		for(var i=0; i<detailsList.length; i++){
+			detailsList[i].removeAttribute("open");
+		}
+	}
+</script>				
+</body>
+</html>
