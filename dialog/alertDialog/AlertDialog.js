@@ -109,6 +109,8 @@
 			if(listener instanceof Function){
 				if (button.addEventListener) {
 					button.addEventListener(type, function(ev) {
+						ev.stopPropagation();
+						
 						listener.call(button, ev, button.innerHTML);
 					}, false);
 				} else {

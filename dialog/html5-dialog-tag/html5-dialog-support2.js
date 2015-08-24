@@ -24,9 +24,6 @@
         }
     }
 
-    /**
-     *  给dialog元素原型添加show和close方法
-     */
     constructor.prototype.show = function() {
         this.setAttribute("open", true);
     }
@@ -55,12 +52,12 @@
     constructor.prototype.showModal = function() {
         this.setAttribute("open", true);
 
-        var backdrop = this.backdrop = document.createElement("dialogbackdrop");
+        this.backdrop = document.createElement("dialogbackdrop");
 
         try {
             this.addEventListener("DOMNodeRemoved", function() {
-                backdrop.parentNode.removeChild(backdrop);
-                backdrop = null;
+                this.backdrop.parentNode.removeChild(this.backdrop);
+                this.backdrop = null;
 
                 //console.log("DOMNodeRemoved");
             });
@@ -131,15 +128,17 @@
                     var input = inputs[s];
                     if (input.type == "submit") {
                         form.onsubmit = function() {
-                            return false
+                            return false;
                         }
                         input.onclick = function(ev) {
-                            var parent = this.parentElement;
+                            var parent = this.parentNode;
 
-                            while (parent.tagName.toLowerCase() != "dialog") {
+                            while (parent.tagName.toLowerCase() != "dialog" && parent.tagName.toLowerCase() != "body") {
                                 parent = parent.parentNode;
                             }
-                            parent.close(this.value);
+                            try {
+                                parent.close(this.value);
+                            } catch (e) {}
                         }
                     }
                 }

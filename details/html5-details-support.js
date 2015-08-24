@@ -104,10 +104,15 @@
 			}
 		}
 	}
-	var style = "details,summary{display:block; position:relative} summary:before{\
+	var style = "details,summary{\
+		display:block; position:relative\
+	}\
+	summary:before{\
 		position: absolute; top:50%; left:-16px; margin-top:-5px;\
 		content: '';border-width: 5px 8px; border-style:solid; border-color:transparent; border-left-color: black\
-	} details[open] >summary:before{border-width: 8px 5px!important; border-left-color:transparent!important; border-top-color: black!important;\
+	}\
+	details[open] >summary:before{\
+		border-width: 8px 5px!important; border-left-color:transparent!important; border-top-color: black!important;\
 	}";
 
 	try {

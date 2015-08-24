@@ -12,27 +12,26 @@ dialog{
 	box-shadow: 0 0 10px rgba(0, 0, 0, .8);
 	-webkit-animation: testanimations .2s;
 	animation: testanimations .2s;
-	overflow: hidden;
 }
-.alertDialog .titleBar {
+.alertDialog >.titleBar {
 	padding: 10px;
 	color: #709CC7;
 	border-bottom: 1px solid;
 	font-size: 1.1em;
 	overflow: hidden;
 }
-.alertDialog .titleBar .titleIcon {
+.alertDialog >.titleBar .titleIcon {
 	display: inline-block;
 	margin-right: 10px;
 	vertical-align: middle;
 }
-.alertDialog .titleBar .titleText {
+.alertDialog >.titleBar .titleText {
 	display: inline-block;
 }
-.alertDialog .content {
+.alertDialog >.content {
 	padding: 12px 15px 20px 15px;
 }
-.alertDialog .actionBar {
+.alertDialog >.actionBar {
 	display: -webkit-box;
 	display: box;
 	display: -webkit-flex;
@@ -41,10 +40,10 @@ dialog{
 	border-top-color: inherit;
 	overflow: hidden;
 }
-.alertDialog .actionBar .button:first-child {
+.alertDialog >.actionBar .button:first-child {
 	border: none;
 }
-.alertDialog .actionBar .button {
+.alertDialog >.actionBar .button {
 	float: left\0\9;
 	-webkit-box-flex: 1;
 	box-flex: 1;
@@ -59,7 +58,7 @@ dialog{
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
-.alertDialog .actionBar .button:active {
+.alertDialog >.actionBar .button:active {
 	background:#709CC7;
 	color: #fff;
 }
